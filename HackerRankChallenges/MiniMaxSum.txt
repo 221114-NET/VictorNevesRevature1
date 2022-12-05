@@ -1,0 +1,32 @@
+    public static void miniMaxSum(List<int> arr)
+    {
+        //sum of the array with implicit conversion to long from int list
+        long Sum = arr.Sum(item => (long)item);
+        
+        //define min value
+        
+        long minInt= arr.Min();
+        
+        //define maxSum. The sum not including the minInt
+        
+        long maxSum= Sum - minInt;
+        
+        //define max value
+        
+        long maxInt= arr.Max();
+        
+        //define minSum, the four smallest values. Sum- man value
+        
+        long minSum= Sum - maxInt;
+        
+
+        
+        //Print with interpolation
+        
+        Console.WriteLine($"{minSum} {maxSum}");
+        
+        
+        
+        
+
+    }
