@@ -1,0 +1,29 @@
+    public static List<int> gradingStudents(List<int> grades)
+    {
+        //new list creation for final grades with no given size
+        List<int> finalGrades = new List<int>();
+        
+        //creating loop for each integer grade in list grades
+        foreach (int grade in grades)
+        {
+            //when range to remainder 5 is less than 3 or the grade is less than 38 then
+            if (grade % 5 <3
+            || grade < 38 )
+            {
+                //dont round, leave grade as is
+                finalGrades.Add(grade);
+            }
+            
+            else
+            {
+                //round up
+                // usual grade % 5 is the inverse of what we need, subtract that number from 5 gives us the remainder to add to the grade 
+                finalGrades.Add(grade + (5 - grade % 5));
+            }
+            
+        }
+        
+        //return final grades
+        return finalGrades;
+    
+    }
