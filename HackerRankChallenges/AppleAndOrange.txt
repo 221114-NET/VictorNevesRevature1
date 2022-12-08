@@ -1,0 +1,33 @@
+public static void countApplesAndOranges(int s, int t, int a, int b, List<int> apples, List<int> oranges)
+    {
+        //intialize the apples and orange values
+        int apple = 0;
+        int orange = 0;
+        
+
+        
+        //a is location of apple tree
+        //b is location of orange tree
+        //create foreach loop tracking each apple falling from tree relevant to house location
+        
+        foreach(int ap in apples)
+        {
+            if (ap+a>=s && ap+a<=t)
+            apple++;
+        }
+        
+        Console.WriteLine(apple);
+        
+        //create foreach loop tracking each orange falling from tree relevant to house location
+        foreach(int oran in oranges)
+        {
+            if (oran+b>=s && oran+b<=t)
+            orange++;
+        }
+    
+        Console.WriteLine(orange);
+        
+        
+    }
+
+}
