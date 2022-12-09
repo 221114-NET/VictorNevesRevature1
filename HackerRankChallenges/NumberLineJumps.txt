@@ -1,0 +1,21 @@
+    public static string kangaroo(int x1, int v1, int x2, int v2)
+    {
+
+//Initializing variable j to be the distance between the two kangaroos
+
+       int j = x2-x1;
+       
+//if statement to declare conditions. If kangaroo one is moving at a pace faster than kangaroo two 
+//AND the remainder of the distance between the two divided by the difference
+//in the rate at which the kangaroos are moving is zero, then we return the string "YES," else we return the string "NO."
+
+       if (v1>v2 & j % (v1-v2)==0)
+       {
+           return "YES";
+       }
+       else
+       {
+           return "NO";
+       }
+        
+    }
