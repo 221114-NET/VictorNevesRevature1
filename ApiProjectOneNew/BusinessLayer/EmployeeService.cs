@@ -59,7 +59,7 @@ namespace BusinessLayer
 
         public Employee PostEmployee(Employee emp)
         {
-            Employee emp = this.repo.PostEmployee(emp);
+            Employee emp1 = this.repo!.PostEmployee(emp);
             return emp1;
         }
 

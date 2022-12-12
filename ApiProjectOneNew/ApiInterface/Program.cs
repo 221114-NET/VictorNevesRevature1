@@ -2,8 +2,7 @@
 namespace ApiInterface;
 using BusinessLayer;
 using ModelsLayer;
-
-
+using RepoLayer;
 
 public class Program
 {
@@ -23,6 +22,7 @@ public class Program
         //builder.Services.AddScoped<IRepoLayer,RepositoryClass>();
         builder.Services.AddScoped<IBusinessLayer, EmployeeService>();
         builder.Services.AddScoped<IBusinessLayer, TicketRequests>();
+        builder.Services.AddScoped<IRepoLayer, RepositoryClass>();
         //builder.Services.AddSingleton<IMyLogger, MyLogger>();
 
         // Configure the HTTP request pipeline.
