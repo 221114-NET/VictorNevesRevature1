@@ -7,7 +7,7 @@ namespace ModelsLayer
 {
     public interface IBusinessLayer
     {
-        
+        Employee PostEmployee(Employee emp);
     }
 
     public interface IRepoLayer
@@ -15,6 +15,7 @@ namespace ModelsLayer
         Ticket ChangeTicketStatus(bool v, TicketStatus newStatus);
         List<Ticket>? GetTicketList(bool v);
         Ticket NewTicket(object ticketID);
+        Employee PostEmployee(Employee emp);
         Employee RegisterUser(string email, string emailPassword);
         string UserLogin(string email, string emailPassword);
     }

@@ -34,8 +34,9 @@ namespace BusinessLayer
             
         }
 
-    
-
-
+        public Employee PostEmployee(Employee emp)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
