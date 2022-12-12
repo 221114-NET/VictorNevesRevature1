@@ -38,7 +38,7 @@ namespace RepoLayer
         public async Task<Employee>? PostEmployeeAsync(Employee emp)
         {
             //use ADO.NET to push to database
-            SqlConnection conn = new SqlConnection("Server=tcp:victor-p1server.database.windows.net,1433;Initial Catalog=VictorProjectOne;Persist Security Info=False;User ID=victor203;Password=Kaike1234-;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+            SqlConnection conn = new SqlConnection("");
             SqlCommand command = new SqlCommand($"INSERT INTO Employees (email, emailPasswords) VALUES(@email,@emailPassword", conn);
             conn.Open(); //opening connection
 
