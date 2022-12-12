@@ -1,5 +1,9 @@
 
 namespace ApiInterface;
+using BusinessLayer;
+using ModelsLayer;
+
+
 
 public class Program
 {
@@ -15,6 +19,11 @@ public class Program
         builder.Services.AddSwaggerGen();
 
         var app = builder.Build();
+
+        //builder.Services.AddScoped<IRepoLayer,RepositoryClass>();
+        builder.Services.AddScoped<IBusinessLayer, EmployeeService>();
+        builder.Services.AddScoped<IBusinessLayer, TicketRequests>();
+        //builder.Services.AddSingleton<IMyLogger, MyLogger>();
 
         // Configure the HTTP request pipeline.
         if (app.Environment.IsDevelopment())

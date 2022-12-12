@@ -12,6 +12,10 @@ namespace ModelsLayer
 
     public interface IRepoLayer
     {
-        
+        Ticket ChangeTicketStatus(bool v, TicketStatus newStatus);
+        List<Ticket>? GetTicketList(bool v);
+        Ticket NewTicket(object ticketID);
+        Employee RegisterUser(string email, string emailPassword);
+        string UserLogin(string email, string emailPassword);
     }
 }
