@@ -9,7 +9,7 @@ namespace BusinessLayer
     public class TicketRequests : IBusinessLayer
     {
         private IRepoLayer? repo;
-        private bool isManager;
+    
 
         public TicketRequests(IRepoLayer iRepo)
         {
