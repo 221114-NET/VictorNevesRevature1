@@ -28,7 +28,7 @@ namespace ApiInterface.Controllers
         /// </summary>
         /// 
 
-    private readonly IBusinessLayer? _ibus;
+    private IBusinessLayer? _ibus;
 
     public ReimbursementController(IBusinessLayer ibus) //dependency injection
     {
