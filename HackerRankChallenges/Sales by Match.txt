@@ -1,0 +1,25 @@
+public static int sockMerchant(int n, List<int> ar)
+    {
+        //Sort the array
+        ar.Sort();
+        //number of pairs
+        int number_of_pairs = 0;
+        //looping through array
+        for(int i=0; i<n-1;i++)
+        {
+            //if certain number equal to the element to its right of it
+            if(ar[i]==ar[i+1])
+            {
+                number_of_pairs++;//then we had to number of pairs
+                i++;//skip over to next element in array
+                
+            }
+            
+        }
+        
+        //return number of pairs
+        return number_of_pairs;
+
+    }
+
+}
