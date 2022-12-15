@@ -1,0 +1,41 @@
+public static string dayOfProgrammer(int year)
+    {
+        //if the year is 1918
+        if (year == 1918)
+        {
+            //return the leap year date
+            return "26.09." + year;
+        }
+        //if the year is less than 1918
+        else if (year < 1918)
+        {
+            //and its the case that it is divisible by 4
+            if (year % 4 == 0)
+            {
+                //it is then returned as a leap year date
+                return "12.09." + year;
+            }
+            else
+            {
+                //it is not returned as a leap year date
+                return "13.09." + year;
+            }
+        }
+        //if the year is greater than 1918
+        else if (year > 1918)
+        {
+            //and the year is divisible by 400 OR the year is divisible by 4 AND not divisible by 100
+            if ((year % 400 == 0) || ((year % 4 == 0) && !(year % 100 == 0)))
+            {
+                //then return a leap year date
+                return "12.09." + year;
+            }
+            else
+            {
+                //then it is not returned as a leap year date
+                return "13.09." + year;
+            }
+        }
+        // to avoid compiler complaining
+        return "1";
+    }
