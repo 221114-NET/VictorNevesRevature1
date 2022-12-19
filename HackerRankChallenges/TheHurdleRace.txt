@@ -1,0 +1,41 @@
+    public static int hurdleRace(int k, List<int> height)
+    {
+        //n, or value of each height: the number of hurdles
+        
+        //k:maximum height character can naturally jump
+        
+        //initialize list value
+        int heigh=0;
+        
+        
+        //foreach loop; for each individual hurdle height in heights list
+        foreach(int hurdle in height)
+        {
+            //if the jumpers given jump value is equal to or greater than the hurdle height then do nothing
+            if(k>=hurdle)
+            {
+            
+            }
+            
+            else
+            {
+                //if the height of the hurdle is greater than the difference between how the jumper can jump and the hurdle we just just checked
+                if(heigh>hurdle-k)
+                {
+                 
+                }
+                else
+                {
+                    //assign the new height value to be outputted, the difference between the jumpers ability and the height of that hurdle
+                    heigh= hurdle-k;   
+                }
+                
+            }
+           
+        
+            
+        }
+        
+        //return the value of the largest difference
+        return (heigh);
+    }
