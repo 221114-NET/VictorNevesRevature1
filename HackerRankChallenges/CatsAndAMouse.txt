@@ -1,0 +1,27 @@
+static string catAndMouse(int x, int y, int z) {
+        
+        //Declaring m to be the absolute value of the distance between cat a and the mouse
+        int m= Math.Abs(x-z);
+        
+        //Declaring n to be the absolute value of the distance between cat b and the mouse
+        int n= Math.Abs(y-z);
+        
+        
+        //if the distances between the two are equal, return mouse C
+        if(m==n)
+        {
+            return "Mouse C";
+            
+        }
+        //if the distance between cat a and the mouse are less than the distance between cat b and the mouse, return Cat A
+        else if(m<n)
+        {
+            return "Cat A";
+        }
+        
+        //Else return Cat B
+        else
+        {
+            return "Cat B";
+        }
+    }
