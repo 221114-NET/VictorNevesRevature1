@@ -1,0 +1,23 @@
+    public static int designerPdfViewer(List<int> h, string word)
+    {
+        
+        //intiailize variables used
+        int char_as_int=0;
+        int h_value=0;
+        int h_max=0;
+        
+        //breaking down string into individual letter characters
+        foreach(char c in word)
+        {
+            //with knowledge of ASCII, -97 gives values beginning at 0 with 'a'
+            char_as_int=c-97;
+            //the height value set as the integer in the heigh array
+            h_value = h[char_as_int];
+            //comparing max to each char value we are passing in
+            h_max = Math.Max(h_value,  h_max);
+        }
+        
+        
+        //take max height multiplied by the length of the word
+        return h_max*word.Length;
+    }
