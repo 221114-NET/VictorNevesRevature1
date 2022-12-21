@@ -1,0 +1,30 @@
+    public static string angryProfessor(int k, List<int> a)
+    {
+        
+        //initialize the counter for number of students arriving on time
+        
+        int counter = 0;
+        
+        //for each student in the arrayofstudents
+        foreach(int n in a)
+        {
+        //if the value is less than or equal to zero, those students are on time
+        if(n<=0)
+        {
+        //add to the counter of students on time
+            counter++;
+        }
+        }
+        
+        //if the number of students on time is greater than or equal to the threshhold number of students
+        if(counter>=k)
+        {
+        //return "NO" for class not cancelled
+            return "NO";
+        }
+        else
+        {
+        //return "YES" for class being cancelled
+            return "YES";
+        }
+    }
