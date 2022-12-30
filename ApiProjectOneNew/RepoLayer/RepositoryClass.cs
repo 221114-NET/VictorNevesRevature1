@@ -63,7 +63,7 @@ namespace RepoLayer
 
         public Employee PostEmployee(Employee emp)
         {
-            SqlConnection conn = new SqlConnection("Server=tcp:victor-p1server.database.windows.net,1433;Initial Catalog=VictorProjectOne;Persist Security Info=False;User ID=victor203;Password=Kaike1234-;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+            SqlConnection conn = new SqlConnection("");
             //SqlCommand command = new SqlCommand($"INSERT INTO ERSEmployees (Fname, Lname, Email, Password, IsManager) VALUES(@Fname, @Lname, @Email, @Password,@IsManager)", conn);
 
             SqlCommand command= new SqlCommand($"insert into ERSEmployees(Fname,Lname,Email, Password, IsManager)"
