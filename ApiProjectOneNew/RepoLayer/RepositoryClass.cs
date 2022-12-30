@@ -10,6 +10,7 @@ namespace RepoLayer
 {
     public class RepositoryClass : IRepoLayer
     {
+        /*
         public Ticket ChangeTicketStatus(bool v, TicketStatus newStatus)
         {
             throw new NotImplementedException();
@@ -58,11 +59,45 @@ namespace RepoLayer
             {
                 return null!;
             }
-        }
+        }*/
 
         public Employee PostEmployee(Employee emp)
         {
-            throw new NotImplementedException();
+            SqlConnection conn = new SqlConnection("");
+            //SqlCommand command = new SqlCommand($"INSERT INTO ERSEmployees (Fname, Lname, Email, Password, IsManager) VALUES(@Fname, @Lname, @Email, @Password,@IsManager)", conn);
+
+            SqlCommand command= new SqlCommand($"insert into ERSEmployees(Fname,Lname,Email, Password, IsManager)"
+            + $"SELECT * from (SELECT @Fname as Fname,"
+            + $" @Lname as Lname,"
+            + $" @Email as Email,"
+            + $" @Password as Password,"
+            + $" @IsManager as IsManger) as new_value"
+            + $" WHERE NOT EXISTS("
+            + $" SELECT Email FROM ERSEmployees WHERE"
+            + $" Email = @Email)", conn);
+
+
+
+            conn.Open(); //opening connection
+
+            //parameters to query
+            command.Parameters.AddWithValue("@Fname", emp.fname);
+            command.Parameters.AddWithValue("@Lname", emp.lname);
+            command.Parameters.AddWithValue("@Email", emp.email);
+            command.Parameters.AddWithValue("@Password", emp.password);
+            command.Parameters.AddWithValue("@IsManager",emp.isManager);
+            int rowsAffected = command.ExecuteNonQuery();
+            //call the private get a employee to get an employee
+            if (rowsAffected == 1)
+            {
+                conn.Close();
+                return emp;
+            }
+            else
+            {
+                Console.WriteLine("This email is already in use.");
+                return null!;
+            }
         }
     }
 }

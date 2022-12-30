@@ -9,21 +9,22 @@ namespace ModelsLayer
     public class Employee
     {
 
-        public Employee(int UserID, string fname, string lname, string email, string emailPassword, bool isManager)
+        public Employee(int EmployeeID, string fname, string lname, string email, string password, bool isManager)
         {
-            this.UserID = UserID;
+            this.EmployeeID = EmployeeID;
             this.fname = fname;
             this.lname = lname;
             this.email = email;
-            this.emailPassword= emailPassword;
+            this.password= password;
+            this.isManager= isManager;
 
         }
 
-        public int UserID {get;set;}
+        public int EmployeeID {get;set;}
         public string fname {get;set;}
         public string lname {get;set;}
         public string email {get;set;}
-        public string emailPassword {get;set;}
+        public string password {get;set;}
         public bool isManager { get; set; } = false;
 
         public string WelcomeEmployee()

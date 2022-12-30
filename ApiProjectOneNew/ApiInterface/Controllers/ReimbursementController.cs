@@ -28,7 +28,7 @@ namespace ApiInterface.Controllers
         /// </summary>
         /// 
 
-    private IBusinessLayer? _ibus;
+    private readonly IBusinessLayer? _ibus;
 
     public ReimbursementController(IBusinessLayer ibus) //dependency injection
     {
@@ -39,18 +39,21 @@ namespace ApiInterface.Controllers
     public ActionResult<Employee> PostEmployee(Employee emp)
     {
         //call business layer method
-        if(ModelState.IsValid)
-        {
-            Employee emp1 = this._ibus!.PostEmployee(emp);
-        }
-        else
-        {
-            return NotFound("Model binding failed");
-        }
+        //if(ModelState.IsValid)
+       // {
+            //Employee emp1 = this._ibus!.PostEmployee(emp);
+        //}
+        //else
+        //{
+            //return NotFound("Model binding failed");
+        //}
         //return what bus layer returned to this calling method
-        return Created("link",emp);
+        //return Created("link",emp);
 
         //in ($"https://localhost:7007/api/pokemon/getcustomer/{c.customerId}",c)
+
+        return _ibus!.PostEmployee(emp);
+       
 
 
     }
