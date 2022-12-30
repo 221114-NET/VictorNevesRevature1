@@ -6,7 +6,7 @@ using ModelsLayer;
 
 namespace RepoLayer
 {
-    public interface IRepoLayer
+    public interface IRepoPostEmployee
     {
         /*
         Ticket ChangeTicketStatus(bool v, TicketStatus newStatus);

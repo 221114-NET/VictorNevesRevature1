@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
 using ModelsLayer;
 
 
 namespace RepoLayer
 {
-    public class RepositoryClass : IRepoLayer
+    public class RepoPostEmployee : IRepoPostEmployee
     {
         /*
         public Ticket ChangeTicketStatus(bool v, TicketStatus newStatus)
@@ -63,7 +64,9 @@ namespace RepoLayer
 
         public Employee PostEmployee(Employee emp)
         {
-            SqlConnection conn = new SqlConnection("");
+            //string AzureConnectionString = new ConfigurationBuilder().AddJsonFile("appsettings.development.json").Build().GetSection("ConnectionStrings")["MyDatabase"]!;
+            SqlConnection conn = new SqlConnection();
+
             //SqlCommand command = new SqlCommand($"INSERT INTO ERSEmployees (Fname, Lname, Email, Password, IsManager) VALUES(@Fname, @Lname, @Email, @Password,@IsManager)", conn);
 
             SqlCommand command= new SqlCommand($"insert into ERSEmployees(Fname,Lname,Email, Password, IsManager)"
