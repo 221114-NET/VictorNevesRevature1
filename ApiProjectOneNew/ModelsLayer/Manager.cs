@@ -8,7 +8,7 @@ namespace ModelsLayer
     public class Manager : Employee
     {
 
-        public Manager(int UserID, string fname, string lname, string email, string emailPassword, bool isManager): base (UserID, fname, lname, email, emailPassword, isManager)
+        public Manager(int EmployeeID, string fname, string lname, string email, string emailPassword, bool isManager): base (EmployeeID, fname, lname, email, emailPassword, isManager)
         {
         
 

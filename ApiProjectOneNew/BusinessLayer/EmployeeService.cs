@@ -10,13 +10,14 @@ namespace BusinessLayer
 
     public class EmployeeService : IBusinessLayer 
     {
-        private IRepoLayer? repo;
+        private readonly IRepoLayer? repo;
 
         public EmployeeService(IRepoLayer iRepo)
         {
         repo = iRepo;
         }
 
+/*
         public Employee RegisterUser(string email, string emailPassword)
         {
             if(InputValidation.ValidateEmail(email) && InputValidation.ValidatePassword(emailPassword))
@@ -57,10 +58,14 @@ namespace BusinessLayer
             return repo?.GetTicketList(true);
         }
 
+        */
+
+        
+
         public Employee PostEmployee(Employee emp)
         {
-            Employee emp1 = this.repo!.PostEmployee(emp);
-            return emp1;
+          return repo!.PostEmployee(emp);
+            
         }
 
         
