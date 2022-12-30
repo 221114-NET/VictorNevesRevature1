@@ -8,11 +8,11 @@ using RepoLayer;
 namespace BusinessLayer
 {
 
-    public class EmployeeService : IBusinessLayer 
+    public class BusPostEmployee : IBusPostEmployee 
     {
-        private readonly IRepoLayer? repo;
+        private readonly IRepoPostEmployee? repo;
 
-        public EmployeeService(IRepoLayer iRepo)
+        public BusPostEmployee(IRepoPostEmployee iRepo)
         {
         repo = iRepo;
         }

@@ -9,7 +9,7 @@ namespace BusinessLayer
 {
     public class TicketRequests
     {
-        private IRepoLayer? repo;
+        //private IRepoLayer? repo;
     
 /*
         public TicketRequests(IRepoLayer iRepo)

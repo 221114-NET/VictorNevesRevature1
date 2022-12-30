@@ -28,12 +28,18 @@ namespace ApiInterface.Controllers
         /// </summary>
         /// 
 
-    private readonly IBusinessLayer? _ibus;
+    private readonly IBusPostEmployee? _ibus;
+    private readonly IGettingEmployeeInfo? _ibusinfo;
 
-    public ReimbursementController(IBusinessLayer ibus) //dependency injection
+    public ReimbursementController(IBusPostEmployee ibus, IGettingEmployeeInfo ibusinfo) //dependency injection
     {
         this._ibus= ibus;
+        this._ibusinfo = ibusinfo;
     }
+
+    
+
+   
 
     [HttpPost("Creating Employee")]
     public ActionResult<Employee> PostEmployee(Employee emp)
@@ -53,11 +59,17 @@ namespace ApiInterface.Controllers
         //in ($"https://localhost:7007/api/pokemon/getcustomer/{c.customerId}",c)
 
         return _ibus!.PostEmployee(emp);
-       
-
-
     }
 
+    //[HttpPost("Getting single employee")]
+    //public ActionResult<Employee> LoginEmployee(Employee emp)
+    
 
+
+    [HttpGet("Get All Employee Info")]
+    public ActionResult<List<Employee>> GettingEmployeeInfo()
+    {
+
+        return _ibusinfo!.BusGettingEmployeeInfo();
     }
-}
+}}

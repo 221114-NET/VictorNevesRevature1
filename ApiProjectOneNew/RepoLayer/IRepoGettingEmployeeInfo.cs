@@ -4,10 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using ModelsLayer;
 
-namespace BusinessLayer
+namespace RepoLayer
 {
-    public interface IBusinessLayer
+    public interface IRepoGettingEmployeeInfo
     {
-        public Employee PostEmployee(Employee emp);
+        public List<Employee> GettingEmployeeInfo();
+        
     }
 }

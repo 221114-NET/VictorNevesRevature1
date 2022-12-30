@@ -14,11 +14,13 @@ public class Program
 
         builder.Services.AddControllers();
 
-        builder.Services.AddScoped<IBusinessLayer, EmployeeService>();
+        builder.Services.AddScoped<IBusPostEmployee, BusPostEmployee>();
 
-        //builder.Services.AddScoped<IBusinessLayer, TicketRequests>();
+        builder.Services.AddScoped<IRepoPostEmployee, RepoPostEmployee>();
 
-        builder.Services.AddScoped<IRepoLayer, RepositoryClass>();
+        builder.Services.AddScoped<IGettingEmployeeInfo, GettingEmployeeInfo>();
+
+        builder.Services.AddScoped<IRepoGettingEmployeeInfo, RepoGettingEmployeeInfo>();
         
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
